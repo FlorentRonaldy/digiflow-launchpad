@@ -92,6 +92,14 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        "wave": {
+          "0%, 100%": { transform: "translateX(0) scale(1)" },
+          "50%": { transform: "translateX(10px) scale(1.05)" },
+        },
+        "flow-line": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -101,6 +109,8 @@ export default {
         "slide-in-right": "slide-in-right 0.8s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "float": "float 3s ease-in-out infinite",
+        "wave": "wave 3s ease-in-out infinite",
+        "flow-line": "flow-line 3s linear infinite",
       },
     },
   },

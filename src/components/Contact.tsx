@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Globe, Facebook, Twitter, Instagram, QrCode } from "lucide-react";
+import { Mail, MapPin, Facebook, Twitter, Instagram, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -171,31 +171,31 @@ const Contact = () => {
                   <Mail className="text-accent mt-1" size={24} />
                   <div>
                     <p className="font-semibold text-primary">Email</p>
-                    <a 
-                      href="mailto:florentonaldy02@gmail.com"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                    >
-                      florentonaldy02@gmail.com
-                    </a>
+                  <a 
+                    href="mailto:contact@digiflow.ai" 
+                    className="text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    contact@digiflow.ai
+                  </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <Globe className="text-accent mt-1" size={24} />
+                  <MapPin className="text-accent mt-1" size={24} />
                   <div>
-                    <p className="font-semibold text-primary">Website</p>
-                    <a 
-                      href="mailto:floriormami@florise.com"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                    >
-                      floriormami@florise.com
-                    </a>
+                    <p className="font-semibold text-primary">Localisation</p>
+                    <p className="text-muted-foreground">
+                      Antananarivo, Madagascar 🇲🇬
+                    </p>
+                    <p className="text-sm text-muted-foreground/70 mt-1">
+                      Service international
+                    </p>
                   </div>
                 </div>
 
                 {/* Social Media */}
                 <div className="pt-6 border-t">
-                  <p className="font-semibold text-primary mb-4">Follow us</p>
+                  <p className="font-semibold text-primary mb-4">Suivez-nous</p>
                   <div className="flex gap-4">
                     <a 
                       href="https://facebook.com" 
@@ -227,16 +227,16 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* QR Code Section */}
+                {/* CTA Box */}
                 <div className="pt-6 border-t">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-white p-4 rounded-lg">
-                      <QrCode className="text-primary" size={80} />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-primary">SCAN FOR INFO</p>
-                      <p className="text-sm text-muted-foreground">Quick access to our digital card</p>
-                    </div>
+                  <div className="p-6 rounded-2xl gradient-cta text-white text-center">
+                    <h3 className="text-xl font-bold mb-2">Demandez votre démo gratuite</h3>
+                    <p className="text-white/90 text-sm mb-2">
+                      Découvrez comment DigiFlow peut transformer votre entreprise
+                    </p>
+                    <p className="text-xs text-white/80">
+                      Réponse sous 24h • Sans engagement
+                    </p>
                   </div>
                 </div>
 

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroRobot from "@/assets/hero-robot.jpg";
+import { ArrowRight, Zap, TrendingUp, Target } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -11,61 +11,88 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen gradient-hero relative overflow-hidden">
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Flow Particles Background */}
+      <div className="flow-particles" />
+      
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl animate-glow-pulse" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1s" }} />
       </div>
 
+      {/* Flowing Lines */}
+      <div className="absolute inset-0 opacity-5 overflow-hidden">
+        <div className="absolute top-1/4 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent animate-flow-line" />
+        <div className="absolute top-1/2 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent animate-flow-line" style={{ animationDelay: "1.5s" }} />
+        <div className="absolute top-3/4 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent animate-flow-line" style={{ animationDelay: "3s" }} />
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between min-h-screen py-20 lg:py-0 gap-12 lg:gap-8">
+        <div className="flex flex-col items-center justify-center min-h-screen py-20 text-center">
           
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left space-y-6 sm:space-y-8 animate-fade-in-up">
+          {/* Main Content */}
+          <div className="max-w-5xl space-y-8 animate-fade-in-up">
+            
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+              <Zap className="w-4 h-4 text-accent" />
+              <span className="text-sm text-white">Intelligence Artificielle & Automatisation</span>
+            </div>
+
+            {/* Main Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              TRANSFORM YOUR
-              <span className="block text-gradient mt-2">FUTURE WITH AI</span>
+              <span className="block">Automatisez.</span>
+              <span className="block text-gradient mt-2">Accélérez. Dominez.</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-light">
-              Innovate. Automate. Rise.
+            {/* Subtitle */}
+            <p className="text-xl sm:text-2xl md:text-3xl text-white/90 font-light max-w-3xl mx-auto">
+              Solutions d'IA et d'automatisation pour propulser votre entreprise
             </p>
             
-            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto lg:mx-0">
-              Unlock the power of artificial intelligence to revolutionize your business. 
-              From smart manufacturing to autonomous systems, we deliver cutting-edge solutions 
-              that drive real results.
+            {/* Description */}
+            <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto">
+              DigiFlow transforme vos processus métier avec l'intelligence artificielle. 
+              Réduisez vos coûts de 60%, optimisez vos workflows et obtenez un ROI en 3-6 mois.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button 
-                variant="cta"
                 size="lg"
-                className="text-lg px-8 py-6 h-auto"
+                className="gradient-cta hover:opacity-90 transition-opacity text-lg px-8 py-6 h-auto group"
                 onClick={() => scrollToSection("contact")}
               >
-                Get Started
+                Demander une Démo
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline"
                 size="lg"
-                className="text-lg px-8 py-6 h-auto border-white text-white hover:bg-white hover:text-primary"
+                className="text-lg px-8 py-6 h-auto border-2 border-white text-white hover:bg-white hover:text-primary"
                 onClick={() => scrollToSection("services")}
               >
-                Learn More
+                Découvrir nos Services
               </Button>
             </div>
-          </div>
 
-          {/* Hero Image */}
-          <div className="flex-1 relative animate-slide-in-right">
-            <div className="relative">
-              <img 
-                src={heroRobot} 
-                alt="Futuristic AI Robot Technology" 
-                className="w-full max-w-2xl mx-auto animate-float drop-shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-50" />
+            {/* Stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-12 max-w-3xl mx-auto">
+              <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                <Target className="w-8 h-8 text-accent" />
+                <div className="text-3xl font-bold text-white">200+</div>
+                <div className="text-sm text-white/70">Clients satisfaits</div>
+              </div>
+              <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                <TrendingUp className="w-8 h-8 text-secondary" />
+                <div className="text-3xl font-bold text-white">60%</div>
+                <div className="text-sm text-white/70">Réduction des coûts</div>
+              </div>
+              <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
+                <Zap className="w-8 h-8 text-accent" />
+                <div className="text-3xl font-bold text-white">3-6 mois</div>
+                <div className="text-sm text-white/70">ROI garanti</div>
+              </div>
             </div>
           </div>
 

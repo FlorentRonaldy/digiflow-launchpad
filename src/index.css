@@ -9,51 +9,52 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 258 59% 11%;
+    --foreground: 210 100% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 258 59% 11%;
+    --card-foreground: 210 100% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 258 59% 11%;
+    --popover-foreground: 210 100% 8%;
 
-    --primary: 258 59% 11%;
+    --primary: 210 100% 8%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 263 70% 50%;
+    --secondary: 16 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 4% 46%;
+    --muted: 210 17% 95%;
+    --muted-foreground: 210 10% 40%;
 
-    --accent: 194 100% 50%;
-    --accent-foreground: 258 59% 11%;
+    --accent: 180 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 263 70% 50%;
+    --border: 210 17% 90%;
+    --input: 210 17% 90%;
+    --ring: 180 100% 45%;
 
     --radius: 0.75rem;
 
-    /* FloRise custom colors */
-    --violet-deep: 258 59% 11%;
-    --violet-accent: 263 70% 50%;
-    --violet-light: 263 70% 60%;
-    --cyan: 194 100% 50%;
-    --magenta: 334 100% 50%;
+    /* DigiFlow custom colors - Based on logo */
+    --navy-dark: 210 100% 8%;
+    --navy-medium: 210 100% 12%;
+    --orange-coral: 16 100% 60%;
+    --cyan-bright: 180 100% 45%;
+    --cyan-light: 180 100% 55%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(194 100% 50%));
-    --gradient-hero: linear-gradient(135deg, hsl(258 59% 11%), hsl(263 70% 30%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 5% 98%));
+    --gradient-primary: linear-gradient(135deg, hsl(16 100% 60%), hsl(180 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 8%), hsl(210 100% 15%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 17% 98%));
+    --gradient-cta: linear-gradient(90deg, hsl(16 100% 60%), hsl(180 100% 45%));
     
     /* Shadows & Glows */
-    --shadow-glow-cyan: 0 10px 40px hsl(194 100% 50% / 0.3);
-    --shadow-glow-violet: 0 10px 40px hsl(263 70% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(258 59% 11% / 0.08);
+    --shadow-glow-cyan: 0 10px 40px hsl(180 100% 45% / 0.4);
+    --shadow-glow-orange: 0 10px 40px hsl(16 100% 60% / 0.4);
+    --shadow-card: 0 4px 20px hsl(210 100% 8% / 0.08);
     
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -62,46 +63,46 @@ All colors MUST be HSL.
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 180 100% 45%;
   }
 
   .dark {
-    --background: 258 59% 11%;
+    --background: 210 100% 8%;
     --foreground: 0 0% 100%;
 
-    --card: 258 50% 15%;
+    --card: 210 100% 12%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 258 50% 15%;
+    --popover: 210 100% 12%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 263 70% 50%;
+    --primary: 180 100% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 258 40% 20%;
+    --secondary: 16 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 258 40% 20%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 210 50% 15%;
+    --muted-foreground: 210 17% 70%;
 
-    --accent: 194 100% 50%;
-    --accent-foreground: 258 59% 11%;
+    --accent: 180 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 258 40% 20%;
-    --input: 258 40% 20%;
-    --ring: 263 70% 50%;
+    --border: 210 50% 20%;
+    --input: 210 50% 20%;
+    --ring: 180 100% 45%;
     
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-background: 210 100% 10%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 180 100% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 50% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 210 50% 20%;
+    --sidebar-ring: 180 100% 45%;
   }
 }
 
@@ -117,6 +118,40 @@ All colors MUST be HSL.
   
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Flow effect particles background */
+  .flow-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .flow-particles::before,
+  .flow-particles::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .flow-particles::before {
+    background: hsl(var(--accent));
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  
+  .flow-particles::after {
+    background: hsl(var(--secondary));
+    bottom: 10%;
+    right: 10%;
+    animation-delay: 4s;
   }
 }
 
@@ -137,12 +172,20 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow-cyan);
   }
   
-  .shadow-glow-violet {
-    box-shadow: var(--shadow-glow-violet);
+  .shadow-glow-cyan {
+    box-shadow: var(--shadow-glow-cyan);
+  }
+  
+  .shadow-glow-orange {
+    box-shadow: var(--shadow-glow-orange);
   }
   
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
   }
 }

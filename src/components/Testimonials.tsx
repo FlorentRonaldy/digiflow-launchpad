@@ -1,39 +1,34 @@
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
-    title: "Visionary AI Powering the Future",
-    text: "FloRise a transformé notre approche de la production. Leur expertise en IA nous a permis d'augmenter notre efficacité de 40%.",
-    name: "Potu Maci",
+    name: "Marie Dubois",
     role: "CEO",
-    company: "TechVision",
+    company: "InnovTech Solutions",
+    text: "DigiFlow a révolutionné notre façon de travailler. L'automatisation de nos processus nous a permis de réduire nos coûts de 65% et d'augmenter notre productivité de 80%.",
     rating: 5
   },
   {
-    title: "Powering the Future",
-    text: "Une solution d'automatisation remarquable qui a révolutionné nos processus métier et réduit nos coûts opérationnels.",
-    name: "Ulrick Mwansta",
-    role: "Operations Director",
-    company: "InnovateCorp",
-    rating: 5
-  },
-  {
-    title: "Exceptional Partnership",
-    text: "L'accompagnement de FloRise nous a permis de déployer une plateforme IA scalable en un temps record.",
-    name: "Liat Conseir",
-    role: "CTO",
+    name: "Jean-Baptiste Martin",
+    role: "Directeur des Opérations",
     company: "DataFlow Systems",
+    text: "Une expertise technique impressionnante et un accompagnement personnalisé. Le ROI a été atteint en seulement 4 mois. Je recommande vivement DigiFlow.",
     rating: 5
   },
   {
-    title: "Innovation at Its Best",
-    text: "Des experts passionnés qui comprennent vraiment les enjeux de la transformation digitale.",
-    name: "Hamopi-kriss",
-    role: "Innovation Lead",
-    company: "FutureWorks",
+    name: "Sophie Laurent",
+    role: "CTO",
+    company: "TechVision Group",
+    text: "L'équipe DigiFlow a compris nos enjeux dès le départ. La solution d'IA qu'ils ont développée dépasse nos attentes et nous permet de rester compétitifs sur notre marché.",
+    rating: 5
+  },
+  {
+    name: "Alexandre Petit",
+    role: "Responsable Innovation",
+    company: "FutureWorks International",
+    text: "Des professionnels passionnés qui maîtrisent vraiment les technologies d'automatisation. Le rapport qualité/prix est imbattable comparé aux agences européennes.",
     rating: 5
   }
 ];
@@ -68,11 +63,11 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 gradient-hero relative overflow-hidden">
-      {/* Background Decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+    <section id="testimonials" className="py-20 sm:py-28 bg-primary relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-glow-pulse" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -80,10 +75,10 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-            TESTIMONIALS
+            ILS NOUS FONT CONFIANCE
           </h2>
           <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
-            Hear from our clients about their transformation journey
+            Découvrez ce que nos clients disent de leur expérience avec DigiFlow
           </p>
         </div>
 
@@ -91,65 +86,81 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto relative">
           
           {/* Main Testimonial Card */}
-          <Card className="bg-primary/30 backdrop-blur-lg border-white/20 text-white">
-            <CardHeader className="space-y-4">
-              <Quote className="text-accent" size={48} />
-              <h3 className="text-2xl sm:text-3xl font-bold">
-                {testimonials[currentIndex].title}
-              </h3>
-              <div className="flex gap-1">
-                {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="fill-accent text-accent" size={20} />
-                ))}
+          <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
+            <CardContent className="p-8 sm:p-12 relative">
+              {/* Quote Icon */}
+              <div className="absolute top-8 left-8 text-accent/20">
+                <Quote size={64} />
               </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-lg sm:text-xl text-white/90 leading-relaxed italic">
-                "{testimonials[currentIndex].text}"
-              </p>
-              <div className="pt-4 border-t border-white/20">
-                <p className="text-xl font-semibold">{testimonials[currentIndex].name}</p>
-                <p className="text-accent">{testimonials[currentIndex].role}</p>
-                <p className="text-white/70">{testimonials[currentIndex].company}</p>
+
+              {/* Content */}
+              <div className="relative z-10 space-y-6">
+                {/* Stars */}
+                <div className="flex gap-1 justify-center">
+                  {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-6 h-6 text-secondary"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                {/* Testimonial Text */}
+                <p className="text-xl sm:text-2xl text-white/90 leading-relaxed text-center italic">
+                  "{testimonials[currentIndex].text}"
+                </p>
+
+                {/* Author Info */}
+                <div className="text-center pt-4">
+                  <div className="font-bold text-xl text-white">
+                    {testimonials[currentIndex].name}
+                  </div>
+                  <div className="text-accent">
+                    {testimonials[currentIndex].role}
+                  </div>
+                  <div className="text-white/60 text-sm">
+                    {testimonials[currentIndex].company}
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Navigation Arrows */}
-          <div className="flex justify-between items-center mt-8">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToPrevious}
-              className="text-white hover:text-accent hover:bg-white/10"
-            >
-              <ChevronLeft size={32} />
-            </Button>
+          <button
+            onClick={goToPrevious}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          <button
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight size={24} />
+          </button>
 
-            {/* Dots Navigation */}
-            <div className="flex gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? "bg-accent w-8" 
-                      : "bg-white/30 hover:bg-white/50"
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={goToNext}
-              className="text-white hover:text-accent hover:bg-white/10"
-            >
-              <ChevronRight size={32} />
-            </Button>
+          {/* Dots Navigation */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "w-8 bg-accent"
+                    : "w-2 bg-white/30 hover:bg-white/50"
+                }`}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
+            ))}
           </div>
 
         </div>

@@ -32,95 +32,113 @@ const Header = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <button 
-              onClick={() => scrollToSection("hero")}
-              className="text-2xl sm:text-3xl font-bold text-white hover:text-accent transition-colors"
-            >
-              FloRise
-              <span className="block text-xs sm:text-sm text-accent font-normal">AI & Automation Solutions</span>
-            </button>
+          <div
+            className="cursor-pointer flex items-center gap-2"
+            onClick={() => scrollToSection("hero")}
+          >
+            <div className="text-2xl font-bold">
+              <span className="text-secondary">Digi</span>
+              <span className="text-accent">Flow</span>
+            </div>
+            <div className="hidden sm:block text-xs text-white/70 border-l border-white/30 pl-2">
+              AI & Automation
+            </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-white hover:text-accent transition-colors font-medium"
+              className="text-white hover:text-accent transition-colors duration-300"
             >
-              Home
+              Accueil
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-white hover:text-accent transition-colors font-medium"
+              className="text-white hover:text-accent transition-colors duration-300"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
-              className="text-white hover:text-accent transition-colors font-medium"
+              onClick={() => scrollToSection("process")}
+              className="text-white hover:text-accent transition-colors duration-300"
             >
-              Testimonials
+              Processus
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-white hover:text-accent transition-colors duration-300"
+            >
+              Témoignages
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-white hover:text-accent transition-colors font-medium"
+              className="text-white hover:text-accent transition-colors duration-300"
             >
               Contact
             </button>
-            <Button 
-              variant="hero"
-              size="lg"
+            <Button
               onClick={() => scrollToSection("contact")}
+              className="gradient-cta hover:opacity-90 transition-opacity"
+              size="sm"
             >
-              Book Demo
+              Demander une Démo
             </Button>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white hover:text-accent transition-colors"
+            className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 animate-fade-in">
-            <button
-              onClick={() => scrollToSection("hero")}
-              className="block w-full text-left px-4 py-2 text-white hover:text-accent hover:bg-white/10 rounded-md transition-colors"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="block w-full text-left px-4 py-2 text-white hover:text-accent hover:bg-white/10 rounded-md transition-colors"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => scrollToSection("testimonials")}
-              className="block w-full text-left px-4 py-2 text-white hover:text-accent hover:bg-white/10 rounded-md transition-colors"
-            >
-              Testimonials
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="block w-full text-left px-4 py-2 text-white hover:text-accent hover:bg-white/10 rounded-md transition-colors"
-            >
-              Contact
-            </button>
-            <Button 
-              variant="hero"
-              className="w-full"
-              onClick={() => scrollToSection("contact")}
-            >
-              Book Demo
-            </Button>
-          </div>
+          <nav className="md:hidden py-4 border-t border-white/10">
+            <div className="flex flex-col gap-4">
+              <button
+                onClick={() => scrollToSection("hero")}
+                className="text-white hover:text-accent transition-colors duration-300 text-left"
+              >
+                Accueil
+              </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-white hover:text-accent transition-colors duration-300 text-left"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection("process")}
+                className="text-white hover:text-accent transition-colors duration-300 text-left"
+              >
+                Processus
+              </button>
+              <button
+                onClick={() => scrollToSection("testimonials")}
+                className="text-white hover:text-accent transition-colors duration-300 text-left"
+              >
+                Témoignages
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-white hover:text-accent transition-colors duration-300 text-left"
+              >
+                Contact
+              </button>
+              <Button
+                onClick={() => scrollToSection("contact")}
+                className="gradient-cta hover:opacity-90 transition-opacity w-full"
+                size="sm"
+              >
+                Demander une Démo
+              </Button>
+            </div>
+          </nav>
         )}
       </nav>
     </header>
