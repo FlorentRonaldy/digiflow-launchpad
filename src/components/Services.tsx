@@ -63,35 +63,35 @@ const Services = () => {
             return (
               <Card 
                 key={service.title}
-                className={`gradient-card border-0 hover:shadow-glow-cyan hover:-translate-y-2 transition-all duration-300 animate-fade-in-up group relative overflow-hidden ${
+                className={`gradient-card border-0 hover:shadow-glow-cyan hover:-translate-y-2 transition-all duration-500 animate-fade-in-up group relative overflow-hidden cursor-pointer ${
                   !service.available ? 'opacity-75' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Hover Gradient Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                 
                 <CardHeader className="space-y-4 relative z-10">
                   {service.badge && (
-                    <Badge className="w-fit bg-secondary text-white">
+                    <Badge className="w-fit bg-secondary text-white animate-pulse">
                       {service.badge}
                     </Badge>
                   )}
-                  <div className={`${service.color} transition-transform group-hover:scale-110 duration-300`}>
-                    <Icon size={64} strokeWidth={1.5} />
+                  <div className={`${service.color} transition-all group-hover:scale-110 group-hover:rotate-6 duration-500`}>
+                    <Icon size={64} strokeWidth={1.5} className="group-hover:animate-pulse" />
                   </div>
-                  <CardTitle className="text-xl sm:text-2xl text-primary">
+                  <CardTitle className="text-xl sm:text-2xl text-primary group-hover:text-accent transition-colors duration-300">
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="relative z-10">
-                  <CardDescription className="text-base text-foreground/80 leading-relaxed">
+                  <CardDescription className="text-base text-foreground/80 leading-relaxed group-hover:text-foreground transition-colors duration-300">
                     {service.description}
                   </CardDescription>
                 </CardContent>
                 
                 {/* Animated Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/20 rounded-lg transition-all duration-300" />
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/30 rounded-lg transition-all duration-500" />
               </Card>
             );
           })}
