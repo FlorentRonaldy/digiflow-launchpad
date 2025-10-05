@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Facebook, Twitter, Instagram, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -60,17 +61,35 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    // TODO: Integrate with EmailJS or backend service
-    setTimeout(() => {
+    try {
+      const { error } = await supabase
+        .from("contact_messages")
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            status: "new",
+          },
+        ]);
+
+      if (error) throw error;
+
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
+        title: "Message envoyé!",
+        description: "Nous vous répondrons dans les plus brefs délais.",
       });
-      
+
       setFormData({ name: "", email: "", message: "" });
+    } catch (error: any) {
+      toast({
+        title: "Erreur",
+        description: error.message,
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
