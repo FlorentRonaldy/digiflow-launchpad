@@ -103,162 +103,199 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-muted">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 sm:py-32 bg-gradient-to-br from-muted via-background to-muted relative overflow-hidden">
+      {/* Decorative background */}
+      <div className="absolute inset-0 bg-grid-white/5 bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4">
-            CONTACT US
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-4 px-5 py-2 rounded-full bg-accent/10 border border-accent/20">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Parlons de votre projet</span>
+          </div>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary mb-6 tracking-tight">
+            CONTACTEZ-NOUS
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to transform your business? Get in touch with our team today
+          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Prêt à <span className="text-primary font-semibold">transformer</span> votre entreprise ? Discutons de votre projet
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           
           {/* Contact Form */}
-          <Card className="gradient-card border-0 shadow-glow-violet">
-            <CardHeader>
-              <CardTitle className="text-2xl sm:text-3xl text-primary">Send us a message</CardTitle>
+          <Card className="gradient-card border border-border/50 shadow-xl-custom hover:shadow-card-hover transition-all duration-500 backdrop-blur-sm">
+            <CardHeader className="space-y-2 pb-6">
+              <CardTitle className="text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
+                Envoyez-nous un message
+              </CardTitle>
+              <p className="text-muted-foreground">Nous répondons généralement sous 24h</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-sm font-semibold text-foreground">
+                    Nom complet <span className="text-destructive">*</span>
+                  </label>
                   <Input
+                    id="name"
                     name="name"
-                    placeholder="Your Name"
+                    type="text"
+                    required
                     value={formData.name}
                     onChange={handleChange}
-                    className={errors.name ? "border-destructive" : ""}
+                    className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.name ? "border-destructive" : ""}`}
+                    placeholder="Jean Dupont"
                   />
                   {errors.name && (
                     <p className="text-destructive text-sm mt-1">{errors.name}</p>
                   )}
                 </div>
 
-                <div>
+                <div className="space-y-2">
+                  <label htmlFor="email" className="block text-sm font-semibold text-foreground">
+                    Email professionnel <span className="text-destructive">*</span>
+                  </label>
                   <Input
+                    id="email"
                     name="email"
                     type="email"
-                    placeholder="Your Email"
+                    required
                     value={formData.email}
                     onChange={handleChange}
-                    className={errors.email ? "border-destructive" : ""}
+                    className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.email ? "border-destructive" : ""}`}
+                    placeholder="jean.dupont@entreprise.com"
                   />
                   {errors.email && (
                     <p className="text-destructive text-sm mt-1">{errors.email}</p>
                   )}
                 </div>
 
-                <div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="block text-sm font-semibold text-foreground">
+                    Message <span className="text-destructive">*</span>
+                  </label>
                   <Textarea
+                    id="message"
                     name="message"
-                    placeholder="Your Message"
+                    required
                     value={formData.message}
                     onChange={handleChange}
-                    className={`min-h-[150px] ${errors.message ? "border-destructive" : ""}`}
+                    className={`w-full min-h-[180px] text-base border-border/50 focus:border-accent transition-colors resize-none ${errors.message ? "border-destructive" : ""}`}
+                    placeholder="Parlez-nous de votre projet d'automatisation et des défis que vous souhaitez relever..."
                   />
                   {errors.message && (
                     <p className="text-destructive text-sm mt-1">{errors.message}</p>
                   )}
                 </div>
 
-                <Button 
+                <Button
                   type="submit"
-                  variant="cta"
-                  size="lg"
-                  className="w-full"
+                  className="w-full gradient-cta hover:shadow-glow-primary hover:scale-[1.02] transition-all duration-300 text-lg py-7 font-semibold shine-effect"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "SENDING..." : "SEND"}
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      ENVOI EN COURS...
+                    </span>
+                  ) : (
+                    "ENVOYER LE MESSAGE"
+                  )}
                 </Button>
               </form>
             </CardContent>
           </Card>
 
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="gradient-card border-0 shadow-glow-cyan">
-              <CardHeader>
-                <CardTitle className="text-2xl sm:text-3xl text-primary">Get in touch</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                
-                <div className="flex items-start gap-4">
-                  <Mail className="text-accent mt-1" size={24} />
+          {/* Contact Info */}
+          <div className="space-y-8">
+            
+            {/* Info Cards */}
+            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500 group">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-5">
+                  <div className="p-4 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                    <Mail size={28} />
+                  </div>
                   <div>
-                    <p className="font-semibold text-primary">Email</p>
+                    <h3 className="font-bold text-xl text-primary mb-2 group-hover:text-accent transition-colors">Email</h3>
+                    <a 
+                      href="mailto:contact@digiflow.com" 
+                      className="text-muted-foreground text-lg hover:text-accent transition-colors"
+                    >
+                      contact@digiflow.com
+                    </a>
+                    <p className="text-sm text-muted-foreground/70 mt-1">Réponse sous 24h</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500 group">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-5">
+                  <div className="p-4 rounded-2xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                    <MapPin size={28} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-xl text-primary mb-2 group-hover:text-secondary transition-colors">Localisation</h3>
+                    <p className="text-muted-foreground text-lg">🇲🇬 Antananarivo, Madagascar</p>
+                    <p className="text-muted-foreground text-lg mt-1">🌍 Service international</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Social Media Card */}
+            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500">
+              <CardContent className="p-8">
+                <h3 className="font-bold text-xl text-primary mb-6">Suivez-nous</h3>
+                <div className="flex gap-4">
                   <a 
-                    href="mailto:contact@digiflow.ai" 
-                    className="text-muted-foreground hover:text-accent transition-colors"
+                    href="https://facebook.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-white hover:scale-110 transition-all duration-300"
+                    aria-label="Facebook"
                   >
-                    contact@digiflow.ai
+                    <Facebook size={28} />
                   </a>
-                  </div>
+                  <a 
+                    href="https://twitter.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-white hover:scale-110 transition-all duration-300"
+                    aria-label="Twitter"
+                  >
+                    <Twitter size={28} />
+                  </a>
+                  <a 
+                    href="https://instagram.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-4 rounded-2xl bg-secondary/10 text-secondary hover:bg-secondary hover:text-white hover:scale-110 transition-all duration-300"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={28} />
+                  </a>
                 </div>
+              </CardContent>
+            </Card>
 
-                <div className="flex items-start gap-4">
-                  <MapPin className="text-accent mt-1" size={24} />
-                  <div>
-                    <p className="font-semibold text-primary">Localisation</p>
-                    <p className="text-muted-foreground">
-                      Antananarivo, Madagascar 🇲🇬
-                    </p>
-                    <p className="text-sm text-muted-foreground/70 mt-1">
-                      Service international
-                    </p>
-                  </div>
-                </div>
-
-                {/* Social Media */}
-                <div className="pt-6 border-t">
-                  <p className="font-semibold text-primary mb-4">Suivez-nous</p>
-                  <div className="flex gap-4">
-                    <a 
-                      href="https://facebook.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      aria-label="Facebook"
-                    >
-                      <Facebook size={28} />
-                    </a>
-                    <a 
-                      href="https://twitter.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      aria-label="Twitter"
-                    >
-                      <Twitter size={28} />
-                    </a>
-                    <a 
-                      href="https://instagram.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                      aria-label="Instagram"
-                    >
-                      <Instagram size={28} />
-                    </a>
-                  </div>
-                </div>
-
-                {/* CTA Box */}
-                <div className="pt-6 border-t">
-                  <div className="p-6 rounded-2xl gradient-cta text-white text-center">
-                    <h3 className="text-xl font-bold mb-2">Demandez votre démo gratuite</h3>
-                    <p className="text-white/90 text-sm mb-2">
-                      Découvrez comment DigiFlow peut transformer votre entreprise
-                    </p>
-                    <p className="text-xs text-white/80">
-                      Réponse sous 24h • Sans engagement
-                    </p>
-                  </div>
-                </div>
-
+            {/* CTA Box */}
+            <Card className="gradient-cta text-white border-0 shadow-glow-primary overflow-hidden relative">
+              <div className="absolute inset-0 shine-effect" />
+              <CardContent className="p-8 text-center relative z-10">
+                <h3 className="text-2xl font-extrabold mb-3">Demandez votre démo gratuite</h3>
+                <p className="text-white/95 text-lg mb-2">
+                  Découvrez comment DigiFlow peut transformer votre entreprise
+                </p>
+                <p className="text-sm text-white/85 font-medium">
+                  ✓ Réponse sous 24h • ✓ Sans engagement • ✓ ROI garanti
+                </p>
               </CardContent>
             </Card>
           </div>
