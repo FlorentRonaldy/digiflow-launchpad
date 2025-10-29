@@ -3,9 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MapPin, Facebook, Twitter, Instagram, Send } from "lucide-react";
+import { Mail, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -62,18 +61,19 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await (supabase as any)
-        .from("contact_messages")
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-            status: "new",
-          },
-        ]);
+      const response = await fetch("https://formspree.io/f/mblpoekr", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-      if (error) throw error;
+      if (!response.ok) throw new Error("Failed to send message");
 
       toast({
         title: "Message envoyé!",
@@ -84,7 +84,7 @@ const Contact = () => {
     } catch (error: any) {
       toast({
         title: "Erreur",
-        description: error.message,
+        description: "Impossible d'envoyer le message. Veuillez réessayer.",
         variant: "destructive",
       });
     } finally {
