@@ -77,12 +77,6 @@ const Header = () => {
             >
               Contact
             </button>
-            <a
-              href="/admin"
-              className="text-white/70 hover:text-accent transition-colors duration-300 text-sm"
-            >
-              Admin
-            </a>
             <Button
               onClick={() => scrollToSection("contact")}
               className="gradient-cta hover:opacity-90 transition-opacity"

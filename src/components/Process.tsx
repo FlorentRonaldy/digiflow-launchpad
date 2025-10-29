@@ -39,11 +39,11 @@ const Process = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
             NOTRE PROCESSUS
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Une méthodologie éprouvée pour garantir votre succès
           </p>
         </div>
@@ -51,7 +51,7 @@ const Process = () => {
         {/* Timeline - Desktop */}
         <div className="hidden lg:block relative">
           {/* Horizontal Line */}
-          <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent transform -translate-y-1/2" />
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-border transform -translate-y-1/2" />
           
           <div className="grid grid-cols-6 gap-4">
             {processSteps.map((step, index) => {
@@ -61,31 +61,26 @@ const Process = () => {
               return (
                 <div key={step.title} className="relative">
                   {/* Connector Dot */}
-                  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-accent rounded-full border-4 border-background z-10 shadow-glow-cyan" />
+                  <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-accent rounded-full border-2 border-background z-10" />
                   
                   {/* Content Card */}
-                  <div
-                    className={`animate-fade-in-up ${
-                      isEven ? 'mb-48' : 'mt-48'
-                    }`}
-                    style={{ animationDelay: `${index * 0.15}s` }}
-                  >
-                    <div className="bg-card border border-border rounded-2xl p-6 shadow-lg hover:shadow-glow-cyan transition-all duration-300 hover:-translate-y-2">
+                  <div className={isEven ? 'mb-48' : 'mt-48'}>
+                    <div className="bg-card border border-border rounded-lg p-6">
                       {/* Number Badge */}
-                      <div className="w-12 h-12 rounded-full gradient-cta flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">
+                      <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-white font-bold mb-4 mx-auto">
                         {index + 1}
                       </div>
                       
                       {/* Icon */}
                       <div className="text-accent mb-3 flex justify-center">
-                        <Icon size={40} strokeWidth={1.5} />
+                        <Icon size={32} strokeWidth={1.5} />
                       </div>
                       
                       {/* Content */}
-                      <h3 className="text-lg font-bold text-primary mb-2 text-center">
+                      <h3 className="text-base font-bold text-primary mb-2 text-center">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                      <p className="text-sm text-muted-foreground text-center">
                         {step.description}
                       </p>
                     </div>
@@ -99,35 +94,31 @@ const Process = () => {
         {/* Timeline - Mobile/Tablet */}
         <div className="lg:hidden relative">
           {/* Vertical Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-secondary to-accent" />
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border" />
           
           <div className="space-y-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
               
               return (
-                <div
-                  key={step.title}
-                  className="relative pl-20 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+                <div key={step.title} className="relative pl-20">
                   {/* Connector Dot */}
-                  <div className="absolute left-5 top-6 w-8 h-8 bg-accent rounded-full border-4 border-background shadow-glow-cyan flex items-center justify-center">
+                  <div className="absolute left-5 top-6 w-8 h-8 bg-accent rounded-full border-4 border-background flex items-center justify-center">
                     <span className="text-white text-sm font-bold">{index + 1}</span>
                   </div>
                   
                   {/* Content Card */}
-                  <div className="bg-card border border-border rounded-2xl p-6 shadow-lg hover:shadow-glow-cyan transition-all duration-300">
+                  <div className="bg-card border border-border rounded-lg p-6">
                     {/* Icon */}
                     <div className="text-accent mb-3">
-                      <Icon size={40} strokeWidth={1.5} />
+                      <Icon size={32} strokeWidth={1.5} />
                     </div>
                     
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-primary mb-2">
+                    <h3 className="text-lg font-bold text-primary mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground">
                       {step.description}
                     </p>
                   </div>
