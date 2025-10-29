@@ -45,7 +45,7 @@ const ContactMessages = () => {
 
   const fetchMessages = async () => {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await (supabase as any)
         .from("contact_messages")
         .select("*")
         .order("created_at", { ascending: false });
@@ -65,7 +65,7 @@ const ContactMessages = () => {
 
   const updateStatus = async (id: string, status: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from("contact_messages")
         .update({ status })
         .eq("id", id);
@@ -87,7 +87,7 @@ const ContactMessages = () => {
 
   const deleteMessage = async (id: string) => {
     try {
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from("contact_messages")
         .delete()
         .eq("id", id);
