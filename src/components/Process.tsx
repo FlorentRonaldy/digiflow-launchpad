@@ -4,33 +4,33 @@ import { Button } from "@/components/ui/button";
 const processSteps = [
   {
     icon: Search,
-    title: "Audit & Analyse",
-    description: "Analyse approfondie de vos processus et identification des opportunités d'automatisation"
+    title: "Découverte",
+    description: "Analyse complète de vos besoins et objectifs pour définir la meilleure approche"
   },
   {
     icon: Lightbulb,
-    title: "Stratégie & Design",
-    description: "Conception de la solution optimale adaptée à vos besoins spécifiques"
+    title: "Conception",
+    description: "Élaboration d'une stratégie sur mesure parfaitement alignée avec votre vision"
   },
   {
     icon: Code,
-    title: "Développement & IA",
-    description: "Développement de votre solution avec intégration de l'intelligence artificielle"
+    title: "Développement",
+    description: "Création de solutions innovantes avec les dernières technologies"
   },
   {
     icon: TestTube,
-    title: "Tests & Optimisation",
-    description: "Tests rigoureux et optimisation pour garantir la performance maximale"
+    title: "Validation",
+    description: "Tests approfondis et ajustements pour garantir l'excellence"
   },
   {
     icon: Rocket,
-    title: "Déploiement & Formation",
-    description: "Mise en production et formation de vos équipes pour une adoption réussie"
+    title: "Lancement",
+    description: "Déploiement réussi et accompagnement pour une transition en douceur"
   },
   {
     icon: HeadphonesIcon,
-    title: "Support continu",
-    description: "Accompagnement et support technique pour assurer votre succès à long terme"
+    title: "Suivi",
+    description: "Support continu et optimisations pour maximiser vos résultats"
   }
 ];
 
@@ -50,10 +50,10 @@ const Process = () => {
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Notre Méthode</span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6">
-            Un Processus <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent via-secondary to-accent">Éprouvé</span>
+            Notre <span className="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-accent via-secondary to-accent">Méthodologie</span>
           </h2>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Six étapes clés pour transformer vos opérations avec l'IA et l'automatisation
+            Six étapes structurées pour garantir le succès de votre projet
           </p>
         </div>
 
@@ -71,7 +71,8 @@ const Process = () => {
                 }}
               >
                 {/* Card */}
-                <div className="relative h-full bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 transition-all duration-500 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-2">
+                <div className="relative h-full bg-card/80 backdrop-blur-md border-2 border-border/60 rounded-2xl p-8 transition-all duration-500 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-3 hover:bg-card">
+
                   
                   {/* Step Number */}
                   <div className="absolute -top-4 -left-4 w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-secondary flex items-center justify-center shadow-lg">
@@ -80,18 +81,18 @@ const Process = () => {
                   
                   {/* Icon Container */}
                   <div className="mb-6 relative">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
-                      <Icon className="text-accent" size={32} strokeWidth={1.5} />
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/30 to-secondary/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                      <Icon className="text-accent" size={36} strokeWidth={2} />
                     </div>
                     {/* Glow effect on hover */}
-                    <div className="absolute inset-0 w-16 h-16 rounded-2xl bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-accent/30 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="text-2xl font-bold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-base">
                     {step.description}
                   </p>
                   
