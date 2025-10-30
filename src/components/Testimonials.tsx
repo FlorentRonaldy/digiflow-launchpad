@@ -86,11 +86,14 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto relative">
           
           {/* Main Testimonial Card */}
-          <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl">
+          <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl hover:shadow-accent/20 transition-all duration-500 rounded-3xl overflow-hidden">
             <CardContent className="p-8 sm:p-12 relative">
+              {/* Background gradient decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-secondary/5 opacity-50" />
+              
               {/* Quote Icon */}
-              <div className="absolute top-8 left-8 text-accent/20">
-                <Quote size={64} />
+              <div className="absolute top-8 left-8 text-accent/30">
+                <Quote size={64} strokeWidth={1.5} />
               </div>
 
               {/* Content */}
@@ -133,7 +136,7 @@ const Testimonials = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -141,7 +144,7 @@ const Testimonials = () => {
           
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />

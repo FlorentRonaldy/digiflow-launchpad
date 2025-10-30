@@ -61,17 +61,18 @@ const Hero = () => {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in" style={{ animationDelay: "0.8s" }}>
               <Button 
+                variant="cta"
                 size="lg"
-                className="gradient-cta hover:shadow-glow-primary hover:scale-105 transition-all duration-300 text-lg px-10 py-7 h-auto group font-semibold shine-effect"
+                className="shine-effect shadow-glow-primary text-lg px-10 py-7 h-auto group"
                 onClick={() => scrollToSection("contact")}
               >
                 Demander une Démo
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
               </Button>
               <Button 
-                variant="outline"
+                variant="cta"
                 size="lg"
-                className="text-lg px-10 py-7 h-auto border-2 border-white/50 text-white hover:bg-white hover:text-primary hover:border-white hover:scale-105 transition-all duration-300 backdrop-blur-sm bg-white/5 font-semibold"
+                className="shine-effect text-lg px-10 py-7 h-auto"
                 onClick={() => scrollToSection("services")}
               >
                 Découvrir nos Services

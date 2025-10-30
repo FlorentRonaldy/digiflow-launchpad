@@ -1,4 +1,5 @@
 import { Search, Lightbulb, Code, TestTube, Rocket, HeadphonesIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const processSteps = [
   {
@@ -108,17 +109,19 @@ const Process = () => {
         </div>
 
         {/* Call to action */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 animate-fade-in">
           <p className="text-muted-foreground mb-6 text-lg">
             Prêt à commencer votre transformation digitale ?
           </p>
-          <button
+          <Button
+            variant="cta"
+            size="lg"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-accent to-secondary text-white font-semibold hover:shadow-2xl hover:shadow-accent/30 hover:-translate-y-1 transition-all duration-300"
+            className="shine-effect shadow-glow-primary"
           >
             Démarrer Maintenant
             <Rocket size={20} />
-          </button>
+          </Button>
         </div>
 
       </div>

@@ -194,7 +194,9 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  className="w-full gradient-cta hover:shadow-glow-primary hover:scale-[1.02] transition-all duration-300 text-lg py-7 font-semibold shine-effect"
+                  variant="cta"
+                  className="w-full shine-effect text-lg py-7"
+                  size="lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (

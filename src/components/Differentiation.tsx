@@ -51,24 +51,30 @@ const Differentiation = () => {
             return (
               <div
                 key={item.title}
-                className="group relative p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-accent/50 transition-all duration-300 animate-fade-in-up"
+                className="group relative p-8 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 transition-all duration-500 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Glow effect on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
                 {/* Icon */}
-                <div className="mb-4 text-accent group-hover:scale-110 transition-transform duration-300">
-                  <Icon size={48} strokeWidth={1.5} />
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-accent/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                    <Icon size={32} strokeWidth={1.5} className="text-accent" />
+                  </div>
+                  <div className="absolute inset-0 w-16 h-16 rounded-xl bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">
+                <h3 className="relative text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-white/70 leading-relaxed">
+                <p className="relative text-white/70 leading-relaxed">
                   {item.description}
                 </p>
 
                 {/* Hover effect line */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-accent to-secondary group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-secondary opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-b-2xl" />
               </div>
             );
           })}

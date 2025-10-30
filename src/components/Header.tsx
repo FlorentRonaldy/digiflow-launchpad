@@ -78,8 +78,9 @@ const Header = () => {
               Contact
             </button>
             <Button
+              variant="cta"
               onClick={() => scrollToSection("contact")}
-              className="gradient-cta hover:opacity-90 transition-opacity"
+              className="shine-effect"
               size="sm"
             >
               Demander une Démo
@@ -131,8 +132,9 @@ const Header = () => {
                 Contact
               </button>
               <Button
+                variant="cta"
                 onClick={() => scrollToSection("contact")}
-                className="gradient-cta hover:opacity-90 transition-opacity w-full"
+                className="shine-effect w-full"
                 size="sm"
               >
                 Demander une Démo
