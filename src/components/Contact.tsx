@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Facebook, Twitter, Instagram, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -11,11 +11,13 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    whatsapp: "",
     message: ""
   });
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    whatsapp: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -28,6 +30,7 @@ const Contact = () => {
     const newErrors = {
       name: "",
       email: "",
+      whatsapp: "",
       message: ""
     };
 
@@ -39,6 +42,10 @@ const Contact = () => {
       newErrors.email = "Email is required";
     } else if (!validateEmail(formData.email)) {
       newErrors.email = "Please enter a valid email";
+    }
+
+    if (formData.whatsapp.trim() && !/^\+?[\d\s-]{10,}$/.test(formData.whatsapp.trim())) {
+      newErrors.whatsapp = "Please enter a valid WhatsApp number";
     }
 
     if (!formData.message.trim()) {
@@ -69,6 +76,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          whatsapp: formData.whatsapp,
           message: formData.message,
         }),
       });
@@ -80,7 +88,7 @@ const Contact = () => {
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
 
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", whatsapp: "", message: "" });
     } catch (error: any) {
       toast({
         title: "Erreur",
@@ -172,6 +180,26 @@ const Contact = () => {
                   {errors.email && (
                     <p className="text-destructive text-sm mt-1">{errors.email}</p>
                   )}
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="whatsapp" className="block text-sm font-semibold text-foreground">
+                    <Phone className="inline-block w-4 h-4 mr-1" />
+                    Numéro WhatsApp
+                  </label>
+                  <Input
+                    id="whatsapp"
+                    name="whatsapp"
+                    type="tel"
+                    value={formData.whatsapp}
+                    onChange={handleChange}
+                    className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.whatsapp ? "border-destructive" : ""}`}
+                    placeholder="+261 34 12 345 67"
+                  />
+                  {errors.whatsapp && (
+                    <p className="text-destructive text-sm mt-1">{errors.whatsapp}</p>
+                  )}
+                  <p className="text-xs text-muted-foreground">Format: +261 34 12 345 67</p>
                 </div>
 
                 <div className="space-y-2">
