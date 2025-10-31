@@ -48,7 +48,7 @@ const Process = () => {
         <div className="text-center mb-24">
           <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-gradient-to-r from-accent/20 via-accent/10 to-secondary/20 border border-accent/30 shadow-lg">
             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-            <span className="text-accent font-bold text-sm uppercase tracking-widest">Roadmap de succès</span>
+            <span className="text-accent font-bold text-sm uppercase tracking-widest">Excellence & Expertise</span>
             <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-primary mb-8 tracking-tight">
@@ -58,7 +58,7 @@ const Process = () => {
             </span>
           </h2>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Un parcours <span className="text-accent font-semibold">éprouvé</span> pour transformer votre vision en <span className="text-secondary font-semibold">réalité</span>
+            Une approche <span className="text-accent font-semibold">structurée</span> et <span className="text-secondary font-semibold">professionnelle</span> pour garantir votre succès
           </p>
         </div>
 
