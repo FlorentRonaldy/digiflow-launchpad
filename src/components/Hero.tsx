@@ -36,26 +36,26 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
               <Zap className="w-4 h-4 text-accent" />
-              <span className="text-sm text-white">Intelligence Artificielle & Automatisation</span>
+              <span className="text-sm text-white">Entreprise Digitale • IA & Automatisation</span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] tracking-tight">
-              <span className="block animate-fade-in">Automatisez.</span>
+              <span className="block animate-fade-in">Votre Partenaire</span>
               <span className="block text-gradient mt-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Accélérez. Dominez.
+                Digital & IA
               </span>
             </h1>
             
             {/* Subtitle */}
             <p className="text-xl sm:text-2xl md:text-3xl text-white/95 font-light max-w-3xl mx-auto leading-tight animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              Solutions d'IA et d'automatisation pour propulser votre entreprise
+              Solutions digitales innovantes pour transformer votre entreprise
             </p>
             
             {/* Description */}
             <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              DigiFlow transforme vos processus métier avec l'intelligence artificielle. 
-              Réduisez vos coûts de <span className="text-accent font-semibold">60%</span>, optimisez vos workflows et obtenez un ROI en <span className="text-secondary font-semibold">3-6 mois</span>.
+              <span className="font-semibold">DigiFlow</span>, votre agence digitale spécialisée en IA et automatisation. 
+              Nous créons des solutions sur mesure pour optimiser vos processus : réduction de <span className="text-accent font-semibold">60%</span> des coûts, ROI garanti en <span className="text-secondary font-semibold">3-6 mois</span>.
             </p>
 
             {/* CTAs */}

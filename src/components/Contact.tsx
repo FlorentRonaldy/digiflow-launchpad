@@ -35,23 +35,31 @@ const Contact = () => {
     };
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Le nom est requis";
+    } else if (formData.name.trim().length > 100) {
+      newErrors.name = "Le nom doit faire moins de 100 caractères";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
+      newErrors.email = "L'email est requis";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = "Please enter a valid email";
+      newErrors.email = "Veuillez entrer un email valide";
+    } else if (formData.email.trim().length > 255) {
+      newErrors.email = "L'email doit faire moins de 255 caractères";
     }
 
-    if (formData.whatsapp.trim() && !/^\+?[\d\s-]{10,}$/.test(formData.whatsapp.trim())) {
-      newErrors.whatsapp = "Please enter a valid WhatsApp number";
+    if (formData.whatsapp.trim()) {
+      if (!/^\+?[\d\s-]{10,20}$/.test(formData.whatsapp.trim())) {
+        newErrors.whatsapp = "Numéro WhatsApp invalide";
+      }
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = "Le message est requis";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters";
+      newErrors.message = "Le message doit contenir au moins 10 caractères";
+    } else if (formData.message.trim().length > 2000) {
+      newErrors.message = "Le message doit faire moins de 2000 caractères";
     }
 
     setErrors(newErrors);
@@ -153,6 +161,7 @@ const Contact = () => {
                     name="name"
                     type="text"
                     required
+                    maxLength={100}
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.name ? "border-destructive" : ""}`}
@@ -172,6 +181,7 @@ const Contact = () => {
                     name="email"
                     type="email"
                     required
+                    maxLength={255}
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.email ? "border-destructive" : ""}`}
@@ -191,6 +201,7 @@ const Contact = () => {
                     id="whatsapp"
                     name="whatsapp"
                     type="tel"
+                    maxLength={20}
                     value={formData.whatsapp}
                     onChange={handleChange}
                     className={`w-full h-12 text-base border-border/50 focus:border-accent transition-colors ${errors.whatsapp ? "border-destructive" : ""}`}
@@ -210,6 +221,7 @@ const Contact = () => {
                     id="message"
                     name="message"
                     required
+                    maxLength={2000}
                     value={formData.message}
                     onChange={handleChange}
                     className={`w-full min-h-[180px] text-base border-border/50 focus:border-accent transition-colors resize-none ${errors.message ? "border-destructive" : ""}`}

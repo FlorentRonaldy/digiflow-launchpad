@@ -19,7 +19,8 @@ const Footer = () => {
               <span className="text-accent">Flow</span>
             </div>
             <p className="text-white/80 leading-relaxed max-w-sm">
-              Solutions d'automatisation intelligente et IA pour transformer vos opérations et accélérer votre croissance.
+              <span className="font-semibold">Agence digitale</span> spécialisée en IA et automatisation. 
+              Nous transformons votre entreprise avec des solutions innovantes sur mesure.
             </p>
             <div className="space-y-2 pt-2">
               <p className="text-white/70 flex items-center gap-2">
@@ -123,7 +124,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-white/10 pt-8 text-center space-y-2">
           <p className="text-white/80 font-medium">
-            © 2025 <span className="text-accent">DigiFlow</span> - Creative Intelligence Agency
+            © 2025 <span className="text-accent">DigiFlow</span> - Agence Digitale • IA & Automatisation
           </p>
           <p className="text-white/50 text-sm">
             Tous droits réservés. Fait avec ❤️ à Madagascar
