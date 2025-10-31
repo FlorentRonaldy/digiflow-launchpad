@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Facebook, Twitter, Instagram, Phone } from "lucide-react";
+import { Mail, MapPin, Facebook, Instagram , Linkedin} from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -265,10 +266,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-bold text-xl text-primary mb-2 group-hover:text-accent transition-colors">Email</h3>
                     <a 
-                      href="mailto:contact@digiflow.com" 
+                      href="mailto:digiflow.team@gmail.com" 
                       className="text-muted-foreground text-lg hover:text-accent transition-colors"
                     >
-                      contact@digiflow.com
+                      digiflow.team@gmail.com
                     </a>
                     <p className="text-sm text-muted-foreground/70 mt-1">Réponse sous 24h</p>
                   </div>
@@ -297,7 +298,7 @@ const Contact = () => {
                 <h3 className="font-bold text-xl text-primary mb-6">Suivez-nous</h3>
                 <div className="flex gap-4">
                   <a 
-                    href="https://facebook.com" 
+                    href="https://www.facebook.com/profile.php?id=61583118653473" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-white hover:scale-110 transition-all duration-300"
@@ -305,15 +306,7 @@ const Contact = () => {
                   >
                     <Facebook size={28} />
                   </a>
-                  <a 
-                    href="https://twitter.com" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-white hover:scale-110 transition-all duration-300"
-                    aria-label="Twitter"
-                  >
-                    <Twitter size={28} />
-                  </a>
+                  
                   <a 
                     href="https://instagram.com" 
                     target="_blank" 
@@ -323,6 +316,15 @@ const Contact = () => {
                   >
                     <Instagram size={28} />
                   </a>
+                  <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-full bg-[#0A66C2]/10 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={28} />
+              </a>
                 </div>
               </CardContent>
             </Card>
