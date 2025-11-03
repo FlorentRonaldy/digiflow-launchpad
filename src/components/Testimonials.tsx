@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import marieDubois from "@/assets/testimonials/marie-dubois.jpg";
+import jeanBaptisteMartin from "@/assets/testimonials/jean-baptiste-martin.jpg";
+import sophieLaurent from "@/assets/testimonials/sophie-laurent.jpg";
+import alexandrePetit from "@/assets/testimonials/alexandre-petit.jpg";
 
 const testimonials = [
   {
@@ -8,28 +13,36 @@ const testimonials = [
     role: "CEO",
     company: "InnovTech Solutions",
     text: "DigiFlow a révolutionné notre façon de travailler. L'automatisation de nos processus nous a permis de réduire nos coûts de 65% et d'augmenter notre productivité de 80%.",
-    rating: 5
+    rating: 5,
+    avatar: marieDubois,
+    initials: "MD"
   },
   {
     name: "Jean-Baptiste Martin",
     role: "Directeur des Opérations",
     company: "DataFlow Systems",
     text: "Une expertise technique impressionnante et un accompagnement personnalisé. Le ROI a été atteint en seulement 4 mois. Je recommande vivement DigiFlow.",
-    rating: 5
+    rating: 5,
+    avatar: jeanBaptisteMartin,
+    initials: "JM"
   },
   {
     name: "Sophie Laurent",
     role: "CTO",
     company: "TechVision Group",
     text: "L'équipe DigiFlow a compris nos enjeux dès le départ. La solution d'IA qu'ils ont développée dépasse nos attentes et nous permet de rester compétitifs sur notre marché.",
-    rating: 5
+    rating: 5,
+    avatar: sophieLaurent,
+    initials: "SL"
   },
   {
     name: "Alexandre Petit",
     role: "Responsable Innovation",
     company: "FutureWorks International",
     text: "Des professionnels passionnés qui maîtrisent vraiment les technologies d'automatisation. Le rapport qualité/prix est imbattable comparé aux agences européennes.",
-    rating: 5
+    rating: 5,
+    avatar: alexandrePetit,
+    initials: "AP"
   }
 ];
 
@@ -118,15 +131,27 @@ const Testimonials = () => {
                 </p>
 
                 {/* Author Info */}
-                <div className="text-center pt-4">
-                  <div className="font-bold text-xl text-white">
-                    {testimonials[currentIndex].name}
-                  </div>
-                  <div className="text-accent">
-                    {testimonials[currentIndex].role}
-                  </div>
-                  <div className="text-white/60 text-sm">
-                    {testimonials[currentIndex].company}
+                <div className="flex flex-col items-center pt-4 space-y-4">
+                  <Avatar className="w-20 h-20 border-4 border-accent/30 shadow-xl">
+                    <AvatarImage 
+                      src={testimonials[currentIndex].avatar} 
+                      alt={testimonials[currentIndex].name}
+                      className="object-cover"
+                    />
+                    <AvatarFallback className="bg-accent text-white text-xl font-bold">
+                      {testimonials[currentIndex].initials}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="text-center">
+                    <div className="font-bold text-xl text-white">
+                      {testimonials[currentIndex].name}
+                    </div>
+                    <div className="text-accent">
+                      {testimonials[currentIndex].role}
+                    </div>
+                    <div className="text-white/60 text-sm">
+                      {testimonials[currentIndex].company}
+                    </div>
                   </div>
                 </div>
               </div>
