@@ -52,10 +52,7 @@ const Process = () => {
             <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
           </div>
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-primary mb-8 tracking-tight">
-            Notre <span className="relative">
-              <span className="bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent">Méthodologie</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-accent via-secondary to-accent rounded-full" />
-            </span>
+            Notre <span className="bg-gradient-to-r from-accent via-secondary to-accent bg-clip-text text-transparent">Méthodologie</span>
           </h2>
           <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Une approche <span className="text-accent font-semibold">structurée</span> et <span className="text-secondary font-semibold">professionnelle</span> pour garantir votre succès
@@ -94,21 +91,16 @@ const Process = () => {
                   </div>
 
                   {/* Card Container */}
-                  <div className="relative pt-24 lg:pt-28">
-                    
-                    {/* Floating Number Badge */}
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl bg-gradient-to-br from-accent via-accent to-secondary flex items-center justify-center shadow-2xl shadow-accent/40 group-hover:scale-125 transition-all duration-500 rotate-12 group-hover:rotate-0 z-20">
-                      <span className="text-white font-black text-3xl">{index + 1}</span>
-                    </div>
+                  <div className="relative pt-20 lg:pt-24">
 
                     {/* Icon Container - Floating above card */}
-                    <div className="absolute top-6 left-1/2 -translate-x-1/2 z-10">
+                    <div className="absolute top-2 left-1/2 -translate-x-1/2 z-10">
                       <div className="relative">
-                        <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-accent/20 to-secondary/20 backdrop-blur-xl flex items-center justify-center border-2 border-accent/30 group-hover:border-accent transition-all duration-500 group-hover:scale-110 shadow-xl">
-                          <Icon className="text-accent drop-shadow-lg" size={40} strokeWidth={2.5} />
+                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent/20 to-secondary/20 backdrop-blur-xl flex items-center justify-center border border-accent/30 group-hover:border-accent transition-all duration-500 group-hover:scale-110 shadow-lg">
+                          <Icon className="text-accent drop-shadow-lg" size={36} strokeWidth={2.5} />
                         </div>
                         {/* Glow effect */}
-                        <div className="absolute inset-0 w-24 h-24 rounded-3xl bg-accent/40 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                        <div className="absolute inset-0 w-20 h-20 rounded-2xl bg-accent/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
                       </div>
                     </div>
                     
