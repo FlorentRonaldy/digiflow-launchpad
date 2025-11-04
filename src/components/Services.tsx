@@ -8,32 +8,28 @@ const services = [
     title: "AI-Powered Automation",
     description: "Automatisez vos tâches répétitives avec l'intelligence artificielle. Libérez votre équipe pour des missions à forte valeur ajoutée.",
     color: "text-accent",
-    available: false,
-    badge: "Bientôt disponible"
+    available: true
   },
   {
     icon: Workflow,
     title: "Intelligent Workflows",
     description: "Optimisez vos processus métier avec des workflows intelligents connectés à tous vos outils existants.",
     color: "text-secondary",
-    available: false,
-    badge: "Bientôt disponible"
+    available: true
   },
   {
     icon: Sparkles,
     title: "Custom AI Solutions",
     description: "Solutions IA sur mesure adaptées à vos besoins spécifiques. De la conception au déploiement.",
     color: "text-accent",
-    available: false,
-    badge: "Bientôt disponible"
+    available: true
   },
   {
     icon: Rocket,
     title: "Digital Transformation",
     description: "Accompagnement complet dans votre transformation digitale avec les technologies les plus récentes.",
     color: "text-secondary",
-    available: false,
-    badge: "Bientôt disponible"
+    available: true
   },
   {
     icon: TrendingUp,
