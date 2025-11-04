@@ -10,101 +10,101 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen gradient-hero relative overflow-hidden">
-      {/* Flow Particles Background */}
-      <div className="flow-particles" />
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl animate-glow-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "1s" }} />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Modern animated background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0" style={{ background: 'var(--gradient-hero)' }}></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-accent/20 rounded-full blur-3xl animate-pulse"></div>
+        
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_70%,transparent_110%)]"></div>
       </div>
 
-      {/* Flowing Lines */}
-      <div className="absolute inset-0 opacity-5 overflow-hidden">
-        <div className="absolute top-1/4 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent animate-flow-line" />
-        <div className="absolute top-1/2 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent animate-flow-line" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-3/4 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent animate-flow-line" style={{ animationDelay: "3s" }} />
-      </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col items-center justify-center min-h-screen py-20 text-center">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center space-y-8 animate-fade-in-up max-w-5xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            <span className="text-sm font-medium text-primary">Disponible Bientôt</span>
+          </div>
           
-          {/* Main Content */}
-          <div className="max-w-5xl space-y-8 animate-fade-in-up">
-            
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
-              <Zap className="w-4 h-4 text-accent" />
-              <span className="text-sm text-white">Entreprise Digitale • IA & Automatisation</span>
-            </div>
+          {/* Main heading with modern gradient */}
+          <h1 className="text-6xl md:text-8xl font-bold leading-tight tracking-tight">
+            <span className="inline-block">
+              Transformez
+            </span>
+            <br />
+            <span className="text-foreground">votre Business</span>
+            <br />
+            <span className="inline-block">
+              avec l'IA
+            </span>
+          </h1>
+          
+          {/* Modern subtitle */}
+          <p className="text-xl md:text-3xl text-muted-foreground max-w-4xl mx-auto font-light leading-relaxed">
+            Solutions d'automatisation intelligente et IA sur mesure
+            <br />
+            <span className="text-foreground/90">pour propulser votre croissance</span>
+          </p>
 
-            {/* Main Title */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] tracking-tight">
-              <span className="block animate-fade-in">Votre Partenaire</span>
-              <span className="block text-gradient mt-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-                Digital & IA
-              </span>
-            </h1>
-            
-            {/* Subtitle */}
-            <p className="text-xl sm:text-2xl md:text-3xl text-white/95 font-light max-w-3xl mx-auto leading-tight animate-fade-in" style={{ animationDelay: "0.4s" }}>
-              Solutions digitales innovantes pour transformer votre entreprise
-            </p>
-            
-            {/* Description */}
-            <p className="text-lg sm:text-xl text-white/85 max-w-2xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.6s" }}>
-              <span className="font-semibold">DigiFlow</span>, votre agence digitale spécialisée en IA et automatisation. 
-              Nous créons des solutions sur mesure pour optimiser vos processus : réduction de <span className="text-accent font-semibold">60%</span> des coûts, ROI garanti en <span className="text-secondary font-semibold">3-6 mois</span>.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in" style={{ animationDelay: "0.8s" }}>
-              <Button 
-                variant="cta"
-                size="lg"
-                className="shine-effect shadow-glow-primary text-lg px-10 py-7 h-auto group"
-                onClick={() => scrollToSection("contact")}
-              >
-                Demander une Démo
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-              </Button>
-              <Button 
-                variant="cta"
-                size="lg"
-                className="shine-effect text-lg px-10 py-7 h-auto"
-                onClick={() => scrollToSection("services")}
-              >
-                Découvrir nos Services
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 pt-16 max-w-4xl mx-auto">
-              <div className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-accent/50 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-glow-cyan animate-fade-in" style={{ animationDelay: "1s" }}>
-                <div className="p-3 rounded-xl bg-accent/20 group-hover:bg-accent/30 transition-colors duration-300">
-                  <Target className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="text-4xl font-extrabold text-white group-hover:text-accent transition-colors duration-300">200+</div>
-                <div className="text-base text-white/70 group-hover:text-white/90 transition-colors duration-300 font-medium">Clients satisfaits</div>
+          {/* Key benefits with modern cards */}
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto pt-8">
+            <div className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20 p-6 hover:border-primary/40 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <p className="text-3xl font-bold text-primary mb-2">40%</p>
+                <p className="text-sm text-muted-foreground">de temps économisé</p>
               </div>
-              <div className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-secondary/50 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-glow-orange animate-fade-in" style={{ animationDelay: "1.2s" }}>
-                <div className="p-3 rounded-xl bg-secondary/20 group-hover:bg-secondary/30 transition-colors duration-300">
-                  <TrendingUp className="w-8 h-8 text-secondary group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="text-4xl font-extrabold text-white group-hover:text-secondary transition-colors duration-300">60%</div>
-                <div className="text-base text-white/70 group-hover:text-white/90 transition-colors duration-300 font-medium">Réduction des coûts</div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-secondary/20 p-6 hover:border-secondary/40 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <p className="text-3xl font-bold text-secondary mb-2">3x</p>
+                <p className="text-sm text-muted-foreground">productivité accrue</p>
               </div>
-              <div className="group flex flex-col items-center gap-3 p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-accent/50 hover:bg-white/10 transition-all duration-500 hover:scale-105 hover:shadow-glow-cyan animate-fade-in" style={{ animationDelay: "1.4s" }}>
-                <div className="p-3 rounded-xl bg-accent/20 group-hover:bg-accent/30 transition-colors duration-300">
-                  <Zap className="w-8 h-8 text-accent group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="text-4xl font-extrabold text-white group-hover:text-accent transition-colors duration-300">3-6</div>
-                <div className="text-base text-white/70 group-hover:text-white/90 transition-colors duration-300 font-medium">Mois pour ROI</div>
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-accent/20 p-6 hover:border-accent/40 transition-all duration-300">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative">
+                <p className="text-3xl font-bold text-accent mb-2">24/7</p>
+                <p className="text-sm text-muted-foreground">automatisation continue</p>
               </div>
             </div>
           </div>
 
+          {/* Modern CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-12">
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="group relative px-10 py-5 rounded-2xl font-semibold text-lg overflow-hidden transition-all duration-500 hover:scale-105 shadow-glow-primary"
+              style={{ background: 'var(--gradient-cta)' }}
+            >
+              <span className="relative z-10 flex items-center gap-2 text-white">
+                Demander une Démo
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </button>
+            
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="group px-10 py-5 bg-card/50 backdrop-blur-sm border-2 border-primary/40 text-foreground rounded-2xl font-semibold text-lg hover:bg-primary/10 hover:border-primary transition-all duration-300 hover:scale-105"
+            >
+              <span className="flex items-center gap-2">
+                Découvrir nos Services
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
