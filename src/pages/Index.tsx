@@ -1,25 +1,29 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Differentiation from "@/components/Differentiation";
-import Process from "@/components/Process";
+import HeroModern from "@/components/HeroModern";
+import ProblemsSection from "@/components/ProblemsSection";
+import SolutionsSection from "@/components/SolutionsSection";
+import PricingSection from "@/components/PricingSection";
+import ProcessModern from "@/components/ProcessModern";
 import Testimonials from "@/components/Testimonials";
+import StatsSection from "@/components/StatsSection";
+import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-// import Chatbot from "@/components/Chatbot";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <Services />
-      <Differentiation />
-      <Process />
+      <HeroModern />
+      <ProblemsSection />
+      <SolutionsSection />
+      <PricingSection />
+      <ProcessModern />
       <Testimonials />
+      <StatsSection />
+      <FinalCTA />
       <Contact />
       <Footer />
-      {/* <Chatbot /> */}
     </div>
   );
 };
