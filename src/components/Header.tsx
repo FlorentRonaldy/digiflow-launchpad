@@ -69,6 +69,12 @@ const Header = () => {
               À propos
             </button>
             <button
+              onClick={() => scrollToSection("faq")}
+              className="px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300"
+            >
+              FAQ
+            </button>
+            <button
               onClick={() => scrollToSection("contact")}
               className="px-4 py-2 rounded-lg text-sm font-medium text-foreground hover:text-accent hover:bg-accent/10 transition-all duration-300"
             >
@@ -121,6 +127,12 @@ const Header = () => {
                 className="px-4 py-3 rounded-lg text-left font-medium text-foreground hover:text-accent hover:bg-accent/10 transition-all"
               >
                 À propos
+              </button>
+              <button
+                onClick={() => scrollToSection("faq")}
+                className="px-4 py-3 rounded-lg text-left font-medium text-foreground hover:text-accent hover:bg-accent/10 transition-all"
+              >
+                FAQ
               </button>
               <button
                 onClick={() => scrollToSection("contact")}

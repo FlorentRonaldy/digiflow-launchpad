@@ -6,6 +6,7 @@ import PricingSection from "@/components/PricingSection";
 import ProcessModern from "@/components/ProcessModern";
 import Testimonials from "@/components/Testimonials";
 import StatsSection from "@/components/StatsSection";
+import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,6 +22,7 @@ const Index = () => {
       <ProcessModern />
       <Testimonials />
       <StatsSection />
+      <FAQSection />
       <FinalCTA />
       <Contact />
       <Footer />
