@@ -119,36 +119,35 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-32 bg-gradient-to-br from-muted via-background to-muted relative overflow-hidden">
+    <section id="contact" className="py-24 bg-background relative overflow-hidden">
       {/* Decorative background */}
-      <div className="absolute inset-0 bg-grid-white/5 bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-      <div className="absolute top-1/4 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/20 via-background to-muted/20" />
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+      <div className="absolute top-1/4 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center mb-20 animate-fade-in">
-          <div className="inline-block mb-4 px-5 py-2 rounded-full bg-accent/10 border border-accent/20">
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Parlons de votre projet</span>
-          </div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-primary mb-6 tracking-tight">
-            CONTACTEZ-NOUS
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            Prêt à transformer votre{" "}
+            <span className="text-gradient">business</span> ?
           </h2>
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Prêt à <span className="text-primary font-semibold">transformer</span> votre entreprise ? Discutons de votre projet
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discutons de votre projet dès aujourd'hui
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           
           {/* Contact Form */}
-          <Card className="gradient-card border border-border/50 shadow-xl-custom hover:shadow-card-hover transition-all duration-500 backdrop-blur-sm">
+          <Card className="bg-card/50 backdrop-blur-xl border border-border hover:shadow-2xl transition-all duration-500">
             <CardHeader className="space-y-2 pb-6">
-              <CardTitle className="text-3xl sm:text-4xl text-primary font-extrabold tracking-tight">
+              <CardTitle className="text-2xl font-bold text-foreground">
                 Envoyez-nous un message
               </CardTitle>
-              <p className="text-muted-foreground">Nous répondons généralement sous 24h</p>
+              <p className="text-muted-foreground">Réponse sous 24h</p>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -234,18 +233,17 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  variant="cta"
-                  className="w-full shine-effect text-lg py-7"
+                  className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                   size="lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      ENVOI EN COURS...
+                      <div className="w-5 h-5 border-2 border-accent-foreground/30 border-t-accent-foreground rounded-full animate-spin" />
+                      Envoi en cours...
                     </span>
                   ) : (
-                    "ENVOYER LE MESSAGE"
+                    "Envoyer le message"
                   )}
                 </Button>
               </form>
@@ -256,34 +254,34 @@ const Contact = () => {
           <div className="space-y-8">
             
             {/* Info Cards */}
-            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500 group">
+            <Card className="bg-card/50 backdrop-blur-xl border border-border hover:shadow-xl transition-all duration-500 group">
               <CardContent className="p-8">
                 <div className="flex items-start gap-5">
-                  <div className="p-4 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                  <div className="p-4 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300 group-hover:scale-110">
                     <Mail size={28} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-primary mb-2 group-hover:text-accent transition-colors">Email</h3>
+                    <h3 className="font-bold text-xl text-foreground mb-2 group-hover:text-accent transition-colors">Email</h3>
                     <a 
                       href="mailto:digiflow.team@gmail.com" 
                       className="text-muted-foreground text-lg hover:text-accent transition-colors"
                     >
                       digiflow.team@gmail.com
                     </a>
-                    <p className="text-sm text-muted-foreground/70 mt-1">Réponse sous 24h</p>
+                    <p className="text-sm text-muted-foreground mt-1">Réponse sous 24h</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500 group">
+            <Card className="bg-card/50 backdrop-blur-xl border border-border hover:shadow-xl transition-all duration-500 group">
               <CardContent className="p-8">
                 <div className="flex items-start gap-5">
-                  <div className="p-4 rounded-2xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-300 group-hover:scale-110">
+                  <div className="p-4 rounded-2xl bg-secondary/10 text-secondary group-hover:bg-secondary group-hover:text-accent-foreground transition-all duration-300 group-hover:scale-110">
                     <MapPin size={28} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-primary mb-2 group-hover:text-secondary transition-colors">Localisation</h3>
+                    <h3 className="font-bold text-xl text-foreground mb-2 group-hover:text-secondary transition-colors">Localisation</h3>
                     <p className="text-muted-foreground text-lg">🇲🇬 Antananarivo, Madagascar</p>
                     <p className="text-muted-foreground text-lg mt-1">🌍 Service international</p>
                   </div>
@@ -292,15 +290,15 @@ const Contact = () => {
             </Card>
 
             {/* Social Media Card */}
-            <Card className="gradient-card border border-border/50 shadow-lg hover:shadow-card-hover transition-all duration-500">
+            <Card className="bg-card/50 backdrop-blur-xl border border-border hover:shadow-xl transition-all duration-500">
               <CardContent className="p-8">
-                <h3 className="font-bold text-xl text-primary mb-6">Suivez-nous</h3>
+                <h3 className="font-bold text-xl text-foreground mb-6">Suivez-nous</h3>
                 <div className="flex gap-4">
                   <a 
                     href="https://www.facebook.com/profile.php?id=61583118653473" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-white hover:scale-110 transition-all duration-300"
+                    className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                     aria-label="Facebook"
                   >
                     <Facebook size={28} />
@@ -310,7 +308,7 @@ const Contact = () => {
                     href="https://instagram.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="p-4 rounded-2xl bg-secondary/10 text-secondary hover:bg-secondary hover:text-white hover:scale-110 transition-all duration-300"
+                    className="p-4 rounded-2xl bg-secondary/10 text-secondary hover:bg-secondary hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                     aria-label="Instagram"
                   >
                     <Instagram size={28} />
@@ -319,26 +317,12 @@ const Contact = () => {
                 href="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 rounded-full bg-[#0A66C2]/10 text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300"
+                className="p-4 rounded-2xl bg-accent/10 text-accent hover:bg-accent hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={28} />
               </a>
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* CTA Box */}
-            <Card className="gradient-cta text-white border-0 shadow-glow-primary overflow-hidden relative">
-              <div className="absolute inset-0 shine-effect" />
-              <CardContent className="p-8 text-center relative z-10">
-                <h3 className="text-2xl font-extrabold mb-3">Demandez votre démo gratuite</h3>
-                <p className="text-white/95 text-lg mb-2">
-                  Découvrez comment DigiFlow peut transformer votre entreprise
-                </p>
-                <p className="text-sm text-white/85 font-medium">
-                  ✓ Réponse sous 24h • ✓ Sans engagement • ✓ ROI garanti
-                </p>
               </CardContent>
             </Card>
           </div>

@@ -2,70 +2,80 @@ import { Facebook, Twitter, Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary py-16 border-t border-white/10 relative overflow-hidden">
+    <footer className="bg-muted/30 border-t border-border relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/50" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="text-3xl font-bold mb-4">
+          <div className="space-y-4 md:col-span-1">
+            <div className="text-2xl font-bold mb-4">
               <span className="text-secondary">Digi</span>
               <span className="text-accent">Flow</span>
             </div>
-            <p className="text-white/80 leading-relaxed max-w-sm">
-              <span className="font-semibold">Agence digitale</span> spécialisée en IA et automatisation. 
-              Nous transformons votre entreprise avec des solutions innovantes sur mesure.
+            <p className="text-muted-foreground leading-relaxed text-sm">
+              Transformation digitale & IA pour les entreprises malgaches.
             </p>
             <div className="space-y-2 pt-2">
-              <p className="text-white/70 flex items-center gap-2">
-                <span className="text-xl">🇲🇬</span>
+              <p className="text-muted-foreground text-sm flex items-center gap-2">
+                <span>🇲🇬</span>
                 <span>Antananarivo, Madagascar</span>
               </p>
-              <p className="text-white/70 flex items-center gap-2">
-                <span className="text-xl">🌍</span>
+              <p className="text-muted-foreground text-sm flex items-center gap-2">
+                <span>🌍</span>
                 <span>Service International</span>
               </p>
             </div>
           </div>
 
-          {/* Links */}
+          {/* Services */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Liens Rapides</h3>
+            <h3 className="text-foreground font-bold mb-6">Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-white/70 hover:text-accent transition-colors inline-flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Services
+                <a href="#services" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                  Solutions
                 </a>
               </li>
               <li>
-                <a href="#differentiation" className="text-white/70 hover:text-accent transition-colors inline-flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  Différenciation
+                <a href="#pricing" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                  Offres
                 </a>
               </li>
               <li>
-                <a href="#process" className="text-white/70 hover:text-accent transition-colors inline-flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <a href="#process" className="text-muted-foreground hover:text-accent transition-colors text-sm">
                   Processus
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-white/70 hover:text-accent transition-colors inline-flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <a href="#testimonials" className="text-muted-foreground hover:text-accent transition-colors text-sm">
                   Témoignages
                 </a>
               </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-foreground font-bold mb-6">Ressources</h3>
+            <ul className="space-y-3">
               <li>
-                <a href="#contact" className="text-white/70 hover:text-accent transition-colors inline-flex items-center gap-2 group">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <a href="#contact" className="text-muted-foreground hover:text-accent transition-colors text-sm">
                   Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-accent transition-colors text-sm">
+                  FAQ
                 </a>
               </li>
             </ul>
@@ -73,61 +83,43 @@ const Footer = () => {
 
           {/* Social & Legal */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-6">Suivez-nous</h3>
+            <h3 className="text-foreground font-bold mb-6">Suivez-nous</h3>
             <div className="flex gap-3 mb-8">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61583118653473"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 hover:shadow-lg hover:shadow-accent/30 transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent hover:bg-accent hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 hover:shadow-lg hover:shadow-accent/30 transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} />
+                <Facebook size={18} />
               </a>
               <a
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-secondary hover:border-secondary hover:scale-110 hover:shadow-lg hover:shadow-secondary/30 transition-all duration-300"
+                className="w-10 h-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary hover:bg-secondary hover:text-accent-foreground hover:scale-110 transition-all duration-300"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={18} />
               </a>
             </div>
             
-            <div>
-              <h4 className="text-white font-semibold mb-4">Légal</h4>
-              <div className="space-y-3">
-                <a href="#" className="text-white/70 hover:text-accent transition-colors block">
-                  Politique de confidentialité
-                </a>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors block">
-                  Conditions d'utilisation
-                </a>
-                <a href="#" className="text-white/70 hover:text-accent transition-colors block">
-                  Mentions légales
-                </a>
-              </div>
+            <div className="space-y-3">
+              <a href="#" className="text-muted-foreground hover:text-accent transition-colors block text-sm">
+                Mentions légales
+              </a>
+              <a href="#" className="text-muted-foreground hover:text-accent transition-colors block text-sm">
+                Confidentialité
+              </a>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-white/10 pt-8 text-center space-y-2">
-          <p className="text-white/80 font-medium">
-            © 2025 <span className="text-accent">DigiFlow</span> - Agence Digitale • IA & Automatisation
-          </p>
-          <p className="text-white/50 text-sm">
-            Tous droits réservés. Fait avec ❤️ à Madagascar
+        <div className="border-t border-border pt-8 text-center">
+          <p className="text-muted-foreground text-sm">
+            © 2025 <span className="text-accent font-semibold">DigiFlow</span> - Transformation digitale & IA
           </p>
         </div>
       </div>

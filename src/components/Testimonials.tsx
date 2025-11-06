@@ -76,22 +76,23 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 sm:py-28 bg-primary relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-glow-pulse" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary rounded-full blur-3xl animate-glow-pulse" style={{ animationDelay: "2s" }} />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]" />
+      <div className="absolute top-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-            ILS NOUS FONT CONFIANCE
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
+            Ils nous font{" "}
+            <span className="text-gradient">confiance</span>
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
-            Découvrez ce que nos clients disent de leur expérience avec DigiFlow
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Découvrez comment nous avons transformé leurs entreprises
           </p>
         </div>
 
@@ -99,13 +100,14 @@ const Testimonials = () => {
         <div className="max-w-4xl mx-auto relative">
           
           {/* Main Testimonial Card */}
-          <Card className="bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl hover:shadow-accent/20 transition-all duration-500 rounded-3xl overflow-hidden">
+          <Card className="bg-card/50 backdrop-blur-xl border border-border hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group">
             <CardContent className="p-8 sm:p-12 relative">
-              {/* Background gradient decoration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-secondary/5 opacity-50" />
+              {/* Background effects */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-secondary/5" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-accent/10 to-secondary/10" />
               
               {/* Quote Icon */}
-              <div className="absolute top-8 left-8 text-accent/30">
+              <div className="absolute top-8 left-8 text-accent/20 group-hover:text-accent/40 transition-colors">
                 <Quote size={64} strokeWidth={1.5} />
               </div>
 
@@ -116,7 +118,7 @@ const Testimonials = () => {
                   {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
                     <svg
                       key={i}
-                      className="w-6 h-6 text-secondary"
+                      className="w-6 h-6 text-accent"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -126,30 +128,30 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Text */}
-                <p className="text-xl sm:text-2xl text-white/90 leading-relaxed text-center italic">
+                <p className="text-xl sm:text-2xl text-foreground leading-relaxed text-center italic">
                   "{testimonials[currentIndex].text}"
                 </p>
 
                 {/* Author Info */}
                 <div className="flex flex-col items-center pt-4 space-y-4">
-                  <Avatar className="w-20 h-20 border-4 border-accent/30 shadow-xl">
+                  <Avatar className="w-20 h-20 border-4 border-accent/30 shadow-xl ring-2 ring-background">
                     <AvatarImage 
                       src={testimonials[currentIndex].avatar} 
                       alt={testimonials[currentIndex].name}
                       className="object-cover"
                     />
-                    <AvatarFallback className="bg-accent text-white text-xl font-bold">
+                    <AvatarFallback className="bg-accent text-accent-foreground text-xl font-bold">
                       {testimonials[currentIndex].initials}
                     </AvatarFallback>
                   </Avatar>
                   <div className="text-center">
-                    <div className="font-bold text-xl text-white">
+                    <div className="font-bold text-xl text-foreground">
                       {testimonials[currentIndex].name}
                     </div>
-                    <div className="text-accent">
+                    <div className="text-accent font-medium">
                       {testimonials[currentIndex].role}
                     </div>
-                    <div className="text-white/60 text-sm">
+                    <div className="text-muted-foreground text-sm">
                       {testimonials[currentIndex].company}
                     </div>
                   </div>
@@ -161,7 +163,7 @@ const Testimonials = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-10 w-12 h-12 rounded-full bg-card/80 backdrop-blur-xl border border-border flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -169,7 +171,7 @@ const Testimonials = () => {
           
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-accent hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-10 w-12 h-12 rounded-full bg-card/80 backdrop-blur-xl border border-border flex items-center justify-center text-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent hover:scale-110 transition-all duration-300 shadow-lg"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -184,7 +186,7 @@ const Testimonials = () => {
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? "w-8 bg-accent"
-                    : "w-2 bg-white/30 hover:bg-white/50"
+                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
