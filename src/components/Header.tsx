@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,6 +74,9 @@ const Header = () => {
             >
               Contact
             </button>
+            <div className="ml-2">
+              <ThemeToggle />
+            </div>
             <Button
               variant="default"
               onClick={() => scrollToSection("contact")}
@@ -83,14 +87,17 @@ const Header = () => {
             </Button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground p-2 hover:bg-accent/10 rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="text-foreground p-2 hover:bg-accent/10 rounded-lg transition-colors"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
